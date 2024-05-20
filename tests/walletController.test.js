@@ -9,7 +9,7 @@ app.use("/api/wallet", walletRoutes);
 describe("Wallet Controller", () => {
   test("POST /api/wallet/create should generate the specified number of Ethereum wallets", async () => {
     const response = await request(app)
-      .post("/api/wallet/create")
+      .post("http://localhost:3000/api/wallet/create")
       .send({ count: 5 });
 
     expect(response.status).toBe(200);
